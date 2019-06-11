@@ -4,8 +4,10 @@ const electron = require("electron");
 const path = require("path");
 const url = require("url");
 
+let win;
+
 electron.app.on("ready", () => {
-	let win = new electron.BrowserWindow({
+	win = new electron.BrowserWindow({
 		webPreferences: {nodeIntegration: true}
 	});
 	win.loadURL(url.format({
