@@ -8,7 +8,10 @@ let win;
 
 electron.app.on("ready", () => {
 	win = new electron.BrowserWindow({
-		webPreferences: {nodeIntegration: true}
+		webPreferences: {
+			contextIsolation: false,
+			nodeIntegration: true
+		}
 	});
 	win.loadURL(url.format({
 		protocol: "file:",
